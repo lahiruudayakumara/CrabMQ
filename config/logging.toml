@@ -1,0 +1,7 @@
+# Example logging configuration using env_logger style
+# You can also control this via RUST_LOG env var.
+# e.g., RUST_LOG=crabmq=debug,info
+
+[format]
+# Placeholder for a future structured logger
+

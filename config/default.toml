@@ -1,0 +1,22 @@
+# Default broker configuration
+
+[server]
+# Listen address and port
+host = "127.0.0.1"
+port = 1883
+# Enable TLS if built with the `tls` feature
+use_tls = false
+cert_file = ""
+key_file = ""
+
+[logging]
+level = "info"
+# See also logging.toml for more advanced configuration
+
+[broker]
+# Keep-alive default in seconds
+keep_alive = 60
+# Max size of offline queue per client
+offline_queue_max = 1000
+# Whether to allow anonymous connections
+allow_anonymous = true

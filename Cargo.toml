@@ -1,0 +1,32 @@
+[package]
+name = "crabmq"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "A minimal MQTT-like broker skeleton in Rust (work-in-progress)"
+repository = "https://github.com/lahiruudayakumara/CrabMQ"
+
+[features]
+# Enable TLS support (placeholder, wiring only)
+tls = ["tokio-rustls", "rustls-pemfile"]
+
+[dependencies]
+tokio = { version = "1.39", features = ["full"] }
+bytes = "1"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+thiserror = "1"
+log = "0.4"
+env_logger = "0.11"
+
+# Optional TLS bits
+rustls-pemfile = { version = "2", optional = true }
+tokio-rustls = { version = "0.26", optional = true }
+
+[dev-dependencies]
+# Example/test helpers (keep minimal)
+anyhow = "1"
+
+[profile.release]
+lto = true
+codegen-units = 1
