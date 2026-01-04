@@ -153,6 +153,28 @@ mosquitto_pub -h localhost -p 1883 -t "test/topic" -m "Hello CrabMQ"
 
 ```bash
 cargo test
+
+---
+
+## 🐳 Docker
+
+Build the local Docker image:
+
+```bash
+./scripts/docker_build.sh
+```
+
+Run with Docker Compose (binds port 1883 and uses `./config`):
+
+```bash
+docker-compose up --build
+```
+
+Or run the image directly:
+
+```bash
+docker run --rm -p 1883:1883 -v $(pwd)/config:/etc/crabmq:ro crabmq:local
+```
 ```
 
 ---

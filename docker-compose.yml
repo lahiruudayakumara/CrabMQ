@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  crabmq:
+    build: .
+    image: crabmq:local
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./config:/etc/crabmq:ro
+    restart: unless-stopped
